@@ -167,7 +167,7 @@ def get_pipeline(
     xgb_train.set_hyperparameters(
         objective="reg:linear",
         num_round=50,
-        max_depth=5,
+        max_depth=4,
         eta=0.2,
         gamma=4,
         min_child_weight=6,
@@ -292,7 +292,7 @@ def get_pipeline(
             property_file=evaluation_report,
             json_path="regression_metrics.mse.value",
         ),
-        right=6.0,
+        right=10.0,
     )
     step_cond = ConditionStep(
         name="CheckMSEEvaluation",
